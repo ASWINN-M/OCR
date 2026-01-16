@@ -5,11 +5,13 @@ from tkinter import Tk, filedialog
 import base64
 from groq import Groq
 import sys
+from dotenv import load_dotenv()
 sys.stdout.reconfigure(encoding='utf-8')
 
+load_dotenv()
 Tk().withdraw()
 
-client = Groq(api_key="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")
+client = Groq(api_key="groq_api_key")
 image_path = filedialog.askopenfilename(
     title="Select an image file",
     filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.gif")]
